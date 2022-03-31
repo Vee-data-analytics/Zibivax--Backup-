@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Zibivax statistics Dashboard</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js' %}" crossorigin="anonymous"></script>
+    </head>
+    {% include  'partials/navbar.html' %}
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header bg-dark"><h3 class="text-center text-white my-4">User Profile</h3></div>
+                                    <div class="card-body">
+                                          {% load static %}
+                                          {% block content %}
+
+                                              {% load plotly_dash %}
+
+                                          {% load i18n static %}
+
+                                          {% block card-body %}
+                                          {% load crispy_forms_tags %}
+                                             <div class="profile_page">
+                                             <div class="media">
+                                             <div class="media-body">
+                                            <div class="account-heading">
+                                         {% if request.user == user %}
+                                        <div class="bio_content">
+                                          <img class="rounded-circle account-img" src="{{ user.employee.profile_picture.url }}" alt="">
+                                            <p class="profile-name">{{ user.employee.name }}</p>
+                                            <p class="profile-email">{{ user.email }}</p>
+                                            <p class="text-secondary">{{ user.date_joined|linebreaks }}</p>
+                                            <p class="text-secondary">{{ user.last_login|linebreaks }}</p>
+                                          </div>
+                                        </div>
+                                       {% endif %}
+                                      {% endblock %}
+                                      {% endblock content %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Zibivax stuff Dashboard 2021</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" crossorigin="anonymous"></script>
+        <script src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+</html>

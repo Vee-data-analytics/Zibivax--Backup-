@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Zibivax Dashboard</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <script src="{% static 'https://cdn.plot.ly/plotly-latest.min.js' %}"></script>
+    </head>
+{% include 'partials/navbar.html'  %}
+{% block content %}
+    {% load plotly_dash %}
+     <div class="row">
+         <div class="col-xl-11">
+             <div class="card mb-10">
+                  <div class="card-header">
+                      <i class="fas fa-chart-area mr-1"><h4>Heat Map</h4></i>
+                           <div class="{% plotly_class name='date_picker' %} card" style="height: 100%; width: 100% ">
+                        {% plotly_app name='date_picker' ratio=0.75  %}
+              </div>
+          </div>
+       </div>
+
+
+ {% endblock content %}

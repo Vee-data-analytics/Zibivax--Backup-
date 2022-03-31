@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.experimentalUseTitleEvent": true,
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.environmentChangesIndicator": "on",
+    "python.pythonPath": "/home/mo__vee/anaconda3/envs/pha2/bin/python",
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.macOptionClickForcesSelection": true
+}

@@ -1,0 +1,17 @@
+{% extends 'users/profile.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sumbit</button>
+                <button class="btn btn-outline-info"  type="button"><a href="{% url 'users:user_profile' request.user.username %}">Confirm Update</a></button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

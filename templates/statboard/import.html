@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Zibivax Dashboard</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" crossorigin="anonymous" />
+        <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js' %}" crossorigin="anonymous"></script>
+    </head>
+{% include 'partials/navbar.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    {%if form %}
+        <form method="post" enctype="multipart/form-data" >
+            <ul class="list-inline text-right">
+                <li class="list-inline-item">
+                    <input type="submit" class="btn-btn primary" value="Import">
+                </li>
+            </ul>
+            <div class="bg-white p-2">
+                {%csrf_token%}
+                {%for field in form%}
+                    {%if field.field.widget.input_type == 'file'%}
+                        <div class="form-group mb-0 files">
+                            {{field}}
+                        </div>
+                    {%else%}
+                        {{field}}
+                    {%endif%}
+                {%endfor%}
+            </div>
+        </form>
+    {%endif%}
+   </div>
+
+{% endblock content %}
