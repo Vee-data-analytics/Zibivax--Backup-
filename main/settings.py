@@ -13,7 +13,7 @@ SECRET_KEY = 'j974%%m0w!!#l#^i9%q*m592t@tz(clsur%3y84%l47t@2&2(*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://zibivax-backup-production.up.railway.app','*']
 
 
 # Application definition
