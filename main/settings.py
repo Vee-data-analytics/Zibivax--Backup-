@@ -258,5 +258,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
-    'https://majestic-carriage-production.up.railway.app',
+    'https://zibivax-backup-production.up.railway.app',
 ]
