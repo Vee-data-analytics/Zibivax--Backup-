@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j974%%m0w!!#l#^i9%q*m592t@tz(clsur%3y84%l47t@2&2(*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -258,5 +258,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
-    'zibivax-backup-production.up.railway.app',
+    'https://zibivax-backup-production.up.railway.app',
 ]
