@@ -13,7 +13,7 @@ SECRET_KEY = 'j974%%m0w!!#l#^i9%q*m592t@tz(clsur%3y84%l47t@2&2(*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://zibivax-backup-production.up.railway.app','*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -255,3 +255,8 @@ SITE_ID = 1
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+    'https://majestic-carriage-production.up.railway.app',
+]
